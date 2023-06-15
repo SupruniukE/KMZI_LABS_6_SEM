@@ -1,0 +1,21 @@
+
+
+def sha_3(message: str, value_l: int):
+    b = 25 * 2 ** value_l
+    rounds = 12 + 2 * value_l
+
+    blocks_s = addition(message, value_l)
+
+    blocks_s_add = [i + (b - len(i)) * '0' for i in blocks_s]
+
+    print(f'Блоки - 1088:')
+    for row in blocks_s:
+        print(row)
+
+    print(f'Блоки - {b}:')
+    for row in blocks_s_add:
+        print(row)
+
+    s = np.zeros((2 ** value_l, 5, 5), dtype=str)
+    print(f'Начальное заполнение s:\n{s}')
+
